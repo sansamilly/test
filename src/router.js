@@ -9,22 +9,29 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path: 'list',
+          name: 'list',
+          component: () => import('./views/List.vue')
+        } 
+      ]
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/login',
+      name: 'login',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: function(){
-        return import('./views/About.vue');
+        return import('./views/Login.vue');
       }
     },
-    {
-      path: "/text",
-      name: "/text",
-      component: () => import("./views/Test.vue"),
-    }
+    // {
+    //   path: "/text",
+    //   name: "/text",
+    //   component: () => import("./views/Test.vue"),
+    // }
   ]
 })
