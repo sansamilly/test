@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import common from '@/scss/common.scss'
 export default {
   
 }
