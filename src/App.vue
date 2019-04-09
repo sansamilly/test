@@ -1,12 +1,37 @@
 <template>
   <div id="app">
+    <v-header v-show="showHeader"></v-header>
     <router-view/>
   </div>
 </template>
 
 <script>
+
+import vHeader from './views/VHeader';
+
 export default {
-  
+  name: 'app',
+  data () {
+    return {
+      showHeader: false
+    }
+  },
+  components:{
+    vHeader
+  },
+  watch: {
+    '$route' () {
+      this.routeChange();
+    }
+  },
+  methods: {
+    routeChange() {
+      this.showHeader = this.$route.path !== '/login' &&  this.$route.path !== '/';
+    }
+  },
+  created () {
+    this.routeChange();
+  }
 }
 </script>
 

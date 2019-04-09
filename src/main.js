@@ -5,9 +5,9 @@ import store from './store'
 import './registerServiceWorker'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import reset from '@/scss/reset.scss'
 import common from '@/scss/common.scss'
-import myIcon from '@/assets/icon/iconfont.css'
+// import reset from '@/scss/reset.scss'
+// import myIcon from '@/assets/icon/iconfont.css'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
@@ -15,5 +15,8 @@ Vue.use(ElementUI);
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
+  beforeCreate () {
+    Vue.prototype.bus = this;
+  }
 }).$mount('#app')

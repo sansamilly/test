@@ -32,6 +32,9 @@ export default {
   },
   methods: {
     login ()  {
+      sessionStorage.setItem('username', this.username);
+      console.log(this.bus);
+      this.bus.$emit("login", this.username);
       this.$router.push("/home");
     },
     add: () => {

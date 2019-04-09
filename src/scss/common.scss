@@ -1,3 +1,9 @@
+@import  './reset.scss';
+@import  './color.scss';
+@import '../assets/icon/iconfont.css';
+*{
+      box-sizing: border-box;
+}
 .pb-10 {
       padding-bottom: 10px 
 }
@@ -10,16 +16,26 @@
 .p-20{
       padding: 20px;
 }
+/*  This is about position  */
 .f-right{
       float: right;
 }
-/*  This is about font size  */
-font-12{
-
+.f-left{
+      float: left;
 }
+.clear{
+      display: table;
+      content: "";
+      clear: both;
+}
+/*  This is about font size  */
+
 /*  This is about color  */
 .c-lightGreen{
-      color: #3cc580;
+      color: $base-color;
+}
+.c-white{
+      color: $white;
 }
 .clear{
       display: table;
